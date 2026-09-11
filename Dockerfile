@@ -1,6 +1,8 @@
 FROM nousresearch/hermes-agent:latest
 
-RUN uv pip install --system --no-cache yfinance pandas matplotlib requests fredapi
+RUN python3 -m ensurepip --upgrade 2>/dev/null; \
+    python3 -m pip install --break-system-packages --no-cache-dir \
+    yfinance pandas matplotlib requests fredapi
 
 COPY config/config.yaml /opt/data/config.yaml
 COPY config/SOUL.md /opt/data/SOUL.md
