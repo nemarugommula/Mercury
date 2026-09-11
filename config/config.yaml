@@ -1,3 +1,18 @@
+model:
+  provider: openrouter
+  model: deepseek/deepseek-v4.1-flash
+  streaming: true
+
+providers:
+  openrouter:
+    base_url: https://openrouter.ai/api/v1
+    request_timeout_seconds: 300
+
+auxiliary:
+  compression:
+    model: deepseek/deepseek-v4.1-flash
+    provider: openrouter
+
 terminal:
   backend: local
   timeout: 300
