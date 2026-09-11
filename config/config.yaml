@@ -1,0 +1,39 @@
+terminal:
+  backend: local
+  timeout: 300
+  persistent_shell: true
+
+compression:
+  enabled: true
+  threshold: 0.50
+  target_ratio: 0.20
+  tail_mode: lean
+  protect_last_n: 20
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 4400
+  user_char_limit: 2750
+  write_approval: false
+
+skills:
+  guard_agent_created: false
+  write_approval: false
+
+agent:
+  max_turns: none
+  api_max_retries: 5
+  run_budget_seconds: null
+  verify_on_stop: false
+  coding_instructions: "When writing Python for stock analysis, prefer pandas for data manipulation, matplotlib for charts, and yfinance for historical data. Save generated charts to /opt/data/reports/."
+
+database:
+  journal_mode: wal
+
+tool_output:
+  max_bytes: 100000
+  max_lines: 5000
+
+tool_budget:
+  mcp_result_size_chars: 100000
